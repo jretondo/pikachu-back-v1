@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pikachu-app-dev:
+    image: node-point-sell-dev:1.0
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - ./public:/app/public
+    ports:
+      - '3009:3009'
+    env_file:
+      - .env
